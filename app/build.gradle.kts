@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    alias(libs.plugins.compilerKSP)
+    alias(libs.plugins.daggerHilt)
 }
 
 android {
@@ -66,4 +68,12 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    //Retrofit
+    implementation(libs.retrofit)
+    implementation(libs.moshi.kotlin)
+
+    //Hilt
+    implementation(libs.dagger.hilt.android)
+    ksp(libs.hilt.compiler)
 }
