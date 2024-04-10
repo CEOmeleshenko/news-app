@@ -1,7 +1,5 @@
 package com.ceomeleshenko.newsapp.data.models
 
-import com.squareup.moshi.JsonClass
-
 data class RedditResponse(
     val kind: String,
     val data: RedditData
@@ -18,9 +16,11 @@ data class RedditResponse(
             val data: RedditPost
         ) {
             data class RedditPost(
+                val author: String,
                 val title: String,
-                val thumbnail: String,
-                val created_utc: Long
+                val selftext: String,
+                val url: String,
+                val created: Long
             )
         }
     }

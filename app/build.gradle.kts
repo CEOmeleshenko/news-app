@@ -83,4 +83,7 @@ dependencies {
     implementation(libs.dagger.hilt.android)
     implementation(libs.androidx.hilt.navigation.compose)
     ksp(libs.hilt.compiler)
+
+    //Coil
+    implementation(libs.coil.compose)
 }
