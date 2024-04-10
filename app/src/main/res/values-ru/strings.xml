@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="author_name">Автор: Андрей Мелешенко</string>
+    <string name="menu_item_news">Новости</string>
+    <string name="menu_item_info">Инфо</string>
+</resources>

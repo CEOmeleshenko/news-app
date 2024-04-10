@@ -1,6 +1,5 @@
 package com.ceomeleshenko.newsapp.presentation.screens
 
-import android.util.Log
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
@@ -20,7 +19,6 @@ fun NewsScreen(
         if (news.value.isNotEmpty()) items(news.value) { news ->
             NewsItem(news, onClick = {
                 viewModel.selectNews(it)
-                Log.d("TAG", "NewsScreen: $it")
                 navController.navigate("detail_news")
             })
         }

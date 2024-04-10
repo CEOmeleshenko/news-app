@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">News App</string>
+    <string name="app_name" translatable="false">NewsApp</string>
+
+    <string name="menu_item_news">News</string>
+    <string name="menu_item_info">Info</string>
+
+    <string name="author_name">Author: Andrey Meleshenko</string>
+    <string name="author_contact" translatable="false">email: example@mail.com</string>
+    <string name="author_social" translatable="false">github: CEOmeleshenko</string>
 </resources>

@@ -10,8 +10,10 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
+import com.ceomeleshenko.newsapp.R
 
 @Composable
 fun BottomNavigation(navController: NavController) {
@@ -27,8 +29,13 @@ fun BottomNavigation(navController: NavController) {
     NavigationBar {
         items.forEach { item ->
             NavigationBarItem(
-                icon = { Icon(item.icon, contentDescription = item.title) },
-                label = { Text(item.title) },
+                icon = {
+                    Icon(
+                        item.icon,
+                        contentDescription = stringResource(id = item.titleResource)
+                    )
+                },
+                label = { Text(stringResource(id = item.titleResource)) },
                 selected = currentRoute == item.route,
                 onClick = {
                     navController.navigate(item.route) {
@@ -46,7 +53,11 @@ fun BottomNavigation(navController: NavController) {
     }
 }
 
-private sealed class NavigationItem(val route: String, val icon: ImageVector, val title: String) {
-    data object News : NavigationItem("news", Icons.Rounded.Star, "Home")
-    data object Info : NavigationItem("info", Icons.Rounded.Info, "Profile")
+private sealed class NavigationItem(
+    val route: String,
+    val icon: ImageVector,
+    val titleResource: Int
+) {
+    data object News : NavigationItem("news", Icons.Rounded.Star, R.string.menu_item_news)
+    data object Info : NavigationItem("info", Icons.Rounded.Info, R.string.menu_item_info)
 }
